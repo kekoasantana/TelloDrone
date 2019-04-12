@@ -48,26 +48,21 @@ while True:
         msg = msg.encode(encoding="utf-8")
         sent = sock.sendto(msg, tello_address)
         time.sleep(3)
-        print("1")
         msg = "takeoff"
         msg = msg.encode(encoding="utf-8")
         sent = sock.sendto(msg, tello_address)
         time.sleep(5)
-        print("2")
         msg = "go 0 50 0 20"
         msg = msg.encode(encoding="utf-8")
         sent = sock.sendto(msg, tello_address)
         time.sleep(10)
-        print("3")
         msg = "land"
         msg = msg.encode(encoding="utf-8")
         sent = sock.sendto(msg, tello_address)
         time.sleep(3)
-        print("4")
         msg = "end"
         msg = msg.encode(encoding="utf-8")
         sent = sock.sendto(msg, tello_address)
-        print("5")
         
         sock.close()  
         break        

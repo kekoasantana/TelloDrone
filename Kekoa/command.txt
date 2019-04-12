@@ -1,10 +1,35 @@
-command
-takeoff
-delay 3
-up 20
-delay 3
-go 0 0 20 
-stop
-battery?
-time?
-end
+Straight Line:
+
+    command
+    takeoff
+    go 0 50 0 20
+    land
+    end
+
+
+Circle:
+    
+    command
+    takeoff
+    curve 50 50 50 25 25 25 20
+    land
+    end
+    
+ 
+ Rectangle:
+    
+    command
+    takeoff
+    go 0 50 0 20
+    stop
+    cw 90
+    go 0 50 0 20
+    stop
+    cw 90
+    go 0 50 0 20
+    stop
+    cw 90
+    go 0 50 0 20
+    stop
+    land
+    end
