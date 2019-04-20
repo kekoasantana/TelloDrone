@@ -1,0 +1,5 @@
+command
+takeoff
+go 100 0 0 20
+land
+end
