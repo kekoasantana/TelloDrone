@@ -34,7 +34,7 @@ def recv():
             break
 
 
-print ('\r\n\r\nStraight Line\r\n')
+print ('\r\n\r\nCircle\r\n')
 
 
 #recvThread create
@@ -44,25 +44,12 @@ recvThread.start()
 while True: 
 
     try:  
-        msg = "commmand"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "takeoff"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(5)
-        msg = "curve 50 50 50 25 25 25 20"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(10)
-        msg = "land"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "end"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
+        with open('circle.txt', 'r') as fp:
+            for line in fp:
+                msg = "line"
+                msg = msg.encode(encoding="utf-8")
+                sent = sock.sendto(msg, tello_address)
+                time.sleep(3)
         
         sock.close()  
         break        

@@ -44,25 +44,13 @@ recvThread.start()
 while True: 
 
     try:  
-        msg = "commmand"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "takeoff"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(5)
-        msg = "go 0 50 0 20"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(10)
-        msg = "land"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "end"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
+ 
+        with open('line.txt', 'r') as fp:
+            for line in fp:
+                msg = "line"
+                msg = msg.encode(encoding="utf-8")
+                sent = sock.sendto(msg, tello_address)
+                time.sleep(3)
         
         sock.close()  
         break        

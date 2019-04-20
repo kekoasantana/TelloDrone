@@ -34,7 +34,7 @@ def recv():
             break
 
 
-print ('\r\n\r\nStraight Line\r\n')
+print ('\r\n\r\nRectangle\r\n')
 
 
 #recvThread create
@@ -43,78 +43,13 @@ recvThread.start()
 
 while True: 
 
-command
-    takeoff
-    go 0 50 0 20
-    stop
-    cw 90
-    go 0 50 0 20
-    stop
-    cw 90
-    go 0 50 0 20
-    stop
-    cw 90
-    go 0 50 0 20
-    stop
-    land
-    end
-
     try:  
-        msg = "commmand"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "takeoff"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(5)
-        msg = "go 0 50 0 20"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(10)
-        msg = "stop"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "cw 90"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        msg = "go 0 50 0 20"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(10)
-        msg = "stop"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "cw 90"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        msg = "go 0 50 0 20"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(10)
-        msg = "stop"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "cw 90"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        msg = "go 0 50 0 20"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(10)
-        msg = "stop"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        time.sleep(3)
-        msg = "land"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
-        msg = "end"
-        msg = msg.encode(encoding="utf-8")
-        sent = sock.sendto(msg, tello_address)
+        with open('rectangle.txt', 'r') as fp:
+            for line in fp:
+                msg = "line"
+                msg = msg.encode(encoding="utf-8")
+                sent = sock.sendto(msg, tello_address)
+                time.sleep(3)
         
         sock.close()  
         break        
