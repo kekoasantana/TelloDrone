@@ -1,5 +1,5 @@
 command
 takeoff
-go 100 0 0 20
+go 100 0 0 30
 land
 end

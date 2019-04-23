@@ -1,15 +1,15 @@
 command
 takeoff
-go 0 100 0 20
+go 100 0 0 30
 stop
 cw 90
-go 0 50 0 20
+go 50 0 0 20
 stop
 cw 90
-go 0 100 0 20
+go 100 0 0 30
 stop
 cw 90
-go 0 50 0 20
+go 50 0 0 20
 stop
 land
 end

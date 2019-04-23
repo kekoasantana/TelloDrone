@@ -46,10 +46,11 @@ while True:
     try:  
         with open('circle.txt', 'r') as fp:
             for line in fp:
-                msg = "line"
+                msg = line[:-1]
+                print("this is msg:",msg)
                 msg = msg.encode(encoding="utf-8")
                 sent = sock.sendto(msg, tello_address)
-                time.sleep(3)
+                time.sleep(6)
         
         sock.close()  
         break        

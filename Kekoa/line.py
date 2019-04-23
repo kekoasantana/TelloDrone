@@ -47,10 +47,11 @@ while True:
  
         with open('line.txt', 'r') as fp:
             for line in fp:
-                msg = "line"
+                msg = line[:-1]
+                print("this is msg:",msg)
                 msg = msg.encode(encoding="utf-8")
                 sent = sock.sendto(msg, tello_address)
-                time.sleep(3)
+                time.sleep(5.5)
         
         sock.close()  
         break        
