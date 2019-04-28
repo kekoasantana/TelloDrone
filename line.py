@@ -1,27 +1,26 @@
 #
-# Tello Python3 Control Demo 
+# Flying a straight line with Tello EDU 
 #
-# http://www.ryzerobotics.com/
+# Reads from text file line.txt
 #
-# 1/1/2018
+
 
 import threading 
 import socket
 import sys
 import time
-
-
-host = ''
-port = 3939
-locaddr = (host,port) 
+    
+host = ''                                                       # local host
+port = 3939                                                     # open port on my laptop
+locaddr = (host,port)
 
 
 # Create a UDP socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)         # create socket
 
-tello_address = ('192.168.10.1', 8889)
+tello_address = ('192.168.10.1', 8889)                          # the IP and port of the drone
 
-sock.bind(locaddr)
+sock.bind(locaddr)                                              # binds socket to local address
 
 def recv():
     count = 0
@@ -44,17 +43,16 @@ recvThread.start()
 while True: 
 
     try:  
- 
-        with open('line.txt', 'r') as fp:
-            for line in fp:
-                msg = line[:-1]
+        with open('line.txt', 'r') as fp:                       # opens file for reading
+            for line in fp:                                     # for loop read through the lines
+                msg = line[:-1]                                 # removes '\n' from each command
                 print("this is msg:",msg)
-                msg = msg.encode(encoding="utf-8")
-                sent = sock.sendto(msg, tello_address)
-                time.sleep(5.5)
+                msg = msg.encode(encoding="utf-8")              # encodes message
+                sent = sock.sendto(msg, tello_address)          # send message to drone
+                time.sleep(5.5)                                 # delay between commands
         
-        sock.close()  
-        break        
+        sock.close()                                            # close socket
+        break                      
         
     except KeyboardInterrupt:
         print ('\n . . .\n')

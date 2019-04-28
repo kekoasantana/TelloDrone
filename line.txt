@@ -1,6 +1,6 @@
 command
 takeoff
 go 100 0 0 30
+go 100 0 0 45
 land
 end
-

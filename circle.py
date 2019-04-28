@@ -46,7 +46,6 @@ while True:
     try:  
         with open('circle.txt', 'r') as fp:
             for line in fp:
-                # if line.has
                 msg = line[:-1]
                 print("this is msg:",msg)
                 msg = msg.encode(encoding="utf-8")
