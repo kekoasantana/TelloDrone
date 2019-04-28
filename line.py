@@ -4,11 +4,11 @@
 # Reads from text file line.txt
 #
 
+
 import threading 
 import socket
 import sys
 import time
-
     
 host = ''                                                       # local host
 port = 3939                                                     # open port on my laptop
@@ -43,7 +43,6 @@ recvThread.start()
 while True: 
 
     try:  
- 
         with open('line.txt', 'r') as fp:                       # opens file for reading
             for line in fp:                                     # for loop read through the lines
                 msg = line[:-1]                                 # removes '\n' from each command
@@ -53,9 +52,9 @@ while True:
                 time.sleep(5.5)                                 # delay between commands
         
         sock.close()                                            # close socket
-        break        
+        break                      
         
-    except KeyboardInterrupt:               
+    except KeyboardInterrupt:
         print ('\n . . .\n')
         sock.close()
         break
