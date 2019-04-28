@@ -1,5 +1,5 @@
 command
-takeup
+takeoff
 ccw 45
 up 80
 go 200 0 0 30
