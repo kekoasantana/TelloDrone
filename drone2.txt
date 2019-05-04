@@ -1,7 +1,7 @@
 command
 takeoff
 ccw 45
-up 80
+up 20
 go 200 0 0 30
 cw 45
 flip r
@@ -15,4 +15,3 @@ curve 50 30 0 70 50 0 30
 ccw 90
 land
 end
-

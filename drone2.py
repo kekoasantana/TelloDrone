@@ -51,7 +51,7 @@ while True:
                 print("this is msg:",msg)
                 msg = msg.encode(encoding="utf-8")
                 sent = sock.sendto(msg, tello_address)
-                time.sleep(5.54)
+                time.sleep(5.55)
         
         sock.close()  
         break        
